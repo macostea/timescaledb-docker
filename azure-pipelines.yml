@@ -1,0 +1,16 @@
+trigger:
+- master
+
+pool:
+name: Default
+
+steps:
+- task: Docker@2
+  displayName: Build and Push
+  inputs:
+    command: buildAndPush
+    containerRegistry: 'Docker Hub'
+    repository: timescaledb
+    tags: |
+      $(Build.BuildId)
+      latest
