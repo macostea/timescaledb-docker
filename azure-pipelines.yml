@@ -5,6 +5,5 @@ pool:
   name: Default
 
 steps:
-  - task: Bash@3
-    inputs:
-      script: make -f Makefile.mcostea
+  - bash: 'make -f Makefile.mcostea'
+    displayName: 'Bash Script'
