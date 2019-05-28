@@ -6,4 +6,7 @@ pool:
 
 steps:
   - bash: 'make -f Makefile.mcostea'
-    displayName: 'Bash Script'
+    displayName: 'Build images'
+
+  - bash: 'make -f Makefile.mcostea push'
+    displayName: 'Push images'
