@@ -8,5 +8,11 @@ steps:
   - bash: 'make -f Makefile.mcostea'
     displayName: 'Build images'
 
+  - task: Docker@2
+    displayName: 'Docker login'
+    inputs:
+      containerRegistry: 'Docker Hub'
+      command: login
+
   - bash: 'make -f Makefile.mcostea push'
     displayName: 'Push images'
